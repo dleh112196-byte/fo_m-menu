@@ -37,38 +37,15 @@
 
   /* HEADER */
   .site-header {
-    background: var(--dark);
-    padding: 48px 24px 36px;
+    background: #3A6B1A;
+    padding: 32px 24px 28px;
     text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .site-header::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-    background: repeating-linear-gradient(
-      45deg, transparent, transparent 40px,
-      rgba(201,169,110,0.03) 40px, rgba(201,169,110,0.03) 80px
-    );
-  }
-  .header-ornament {
-    color: var(--gold); font-size: 11px;
-    letter-spacing: 4px; text-transform: uppercase;
-    margin-bottom: 16px; display: block;
-    font-family: 'Noto Serif KR';
   }
   .restaurant-name {
     font-family: 'Noto Serif KR', serif;
-    font-size: clamp(28px, 7vw, 48px);
+    font-size: clamp(32px, 9vw, 60px);
     font-weight: 300; color: #FFFFFF;
-    letter-spacing: 2px; line-height: 1.2;
-    margin-bottom: 8px;
-  }
-  .restaurant-sub {
-    color: var(--gold-light); font-size: 13px;
-    letter-spacing: 3px; font-weight: 300;
-    font-family: 'Noto Serif KR';
-    margin-bottom: 24px;
+    letter-spacing: 6px; line-height: 1.2;
   }
   .gold-line {
     width: 60px; height: 1px;
@@ -317,10 +294,7 @@
 
 <!-- HEADER -->
 <header class="site-header">
-  <span class="header-ornament">Fine Dining</span>
-  <h1 class="restaurant-name" id="restaurant-name-display">레스토랑</h1>
-  <p class="restaurant-sub" id="restaurant-sub-display">Seasonal Italian Cuisine</p>
-  <div class="gold-line"></div>
+  <h1 class="restaurant-name">fo_m</h1>
 </header>
 
 <!-- CATEGORY NAV -->
@@ -437,9 +411,6 @@ let pendingImgData = null;
 function save() { localStorage.setItem('menuData', JSON.stringify(menuData)); }
 
 function render() {
-  document.getElementById('restaurant-name-display').textContent = menuData.restaurantName;
-  document.getElementById('restaurant-sub-display').textContent = menuData.restaurantSub;
-
   const nav = document.getElementById('nav-inner');
   const container = document.getElementById('menu-container');
   nav.innerHTML = '';
